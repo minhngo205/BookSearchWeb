@@ -16,7 +16,11 @@ namespace BookSearchWeb.Controllers
         private readonly BookDBContext _db = new BookDBContext();
         private readonly UserSearch _userSearch = new UserSearch();
         private readonly AuthorDetailsSearch _authorSearch = new AuthorDetailsSearch();
-        public async Task<ActionResult> Index(string id = null, int page = 1, int pageSize = 10)
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public async Task<ActionResult> SearchResults(string id = null, int page = 1, int pageSize = 10)
         {
             if (!String.IsNullOrEmpty(id))
             {

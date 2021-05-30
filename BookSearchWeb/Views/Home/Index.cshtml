@@ -1,52 +1,24 @@
-﻿@model PagedList.IPagedList<BookSearchWeb.Models.BookUserSearch>
-@using PagedList.Mvc;
-
-@{var searchfor = Request.Params["id"];}
-@if (searchfor.IsEmpty())
-{
-    ViewBag.Title = "Home Page";
-}
-else
-{
-    ViewBag.Title = "Searched for: " + searchfor;
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+    ViewBag.Title = "Search";
 }
 
-<div class="container">
-    @if (Model == null || Model.TotalItemCount <= 0)
-    {
-        <p>Sorry no results for <strong>@searchfor</strong></p>
-    }
-    else
-    {
-        if (searchfor != null)
-        {
-            <p>Their are <strong>@Model.TotalItemCount</strong> results for <strong>@searchfor</strong></p>
-        }
-        else
-        {
-            <p>Recently searched</p>
-        }
-
-        <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Last Updated</th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td class="hoverEffect">@Html.ActionLink(@item.Name, "BookDetails", new { bookLink = @item.BookLink, authorLink = @item.AuthorLink, authorName = @item.Author })</td>
-                    <td class="hoverEffect">@Html.ActionLink(@item.Author, "AuthorDetails", new { authorLink = @item.AuthorLink, authorName = @item.Author })</td>
-                    <td>@item.DataAndTime</td>
-                </tr>
-            }
-        </table>
-        if (@Model.Count() < @Model.TotalItemCount)
-        {
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
-        }
-    }
-
-</div>
+<header class="homePage-header">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <div class="search-content">
+                    <div class="logo">
+                        <a href="Index">
+                            <h1>Webmantic</h1>
+                            <span>Semantic web search engine</span>
+                        </a>
+                    </div>
+                    <form action="@Url.Action("searchresults","home")" method="get" class="form">
+                        <input class="input-search" type="text" name="id" placeholder="Search...">
+                    </form>
+                <p>Created by <a href="https://www.facebook.com/hoangminh.ngo.205/" target="_blank"><strong>Ngô Hoàng Minh</strong></a> as part of my course project at <a href="http://dut.udn.vn/" target="_blank"><strong>Danang University of Science and Technology</strong></a></p>
+            </div>
+        </div>
+    </div>
+    <canvas id="header-connectors" class="js-Connectors"></canvas>
+</header>
