@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @* title - The title of the page which appears in the browser window title. Aim for the title to be less than 70
         characters. The site name appears at the end for better SEO. *@
-    <title>@ViewBag.Title - NPL Semantic Search Engine</title>
+    <title>@ViewBag.Title - Webmantic</title>
 
     @* theme-color - The colour of the toolbar in Chrome M39+
         See http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android *@
@@ -18,15 +18,11 @@
 
     @* Custom Fonts - If you are using custom fonts. Consider using the Google Web Fonts Loader in async mode.
         See https://github.com/typekit/webfontloader. *@
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/css/dev/index.css">
+    <link rel="icon" href="~/Content/Image/11532f1f55daad6e95df4fd9547e728d.jpeg" />
     <meta name="x-font-awesome-stylesheet-fallback-test" class="fa">
     @Styles.Render("~/Content/fa")
     @Scripts.Render("~/bundles/modernizr")
-
-    @* Description - Used by search engines. Aim for more than 160 characters. *@
-    <meta name="description" content="The is a semantic web search engine that uses Natural Language processing as part of my dissertation at Cardiff Metropolitan University">
-    @* Author - Used by search engines. The author of the page. *@
-    <meta name="author" content="Ieuan Walker">
 
     @* You can use the head section to render additional meta tags. *@
     @RenderSection("head", required: false)
@@ -36,10 +32,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jqueryvalunobtrusive")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/myScripts")
-    @Scripts.Render("~/bundles/site")
     @RenderSection("scripts", required: false)
 </body>
 </html>

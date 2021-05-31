@@ -20,7 +20,7 @@ namespace BookSearchWeb.Controllers
         {
             return View();
         }
-        public async Task<ActionResult> SearchResults(string id = null, int page = 1, int pageSize = 10)
+        public async Task<ActionResult> SearchResults(string id, int page = 1, int pageSize = 10)
         {
             if (!String.IsNullOrEmpty(id))
             {

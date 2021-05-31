@@ -4,7 +4,7 @@
 @{var searchfor = Request.Params["id"];}
 @if (searchfor.IsEmpty())
 {
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Search Results Page";
 }
 else
 {
@@ -45,7 +45,8 @@ else
         </table>
         if (@Model.Count() < @Model.TotalItemCount)
         {
-            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
+            var id = searchfor;
+            @Html.PagedListPager(Model, page => Url.Action("SearchResults", new { id, page, pageSize = Model.PageSize }));
         }
     }
 

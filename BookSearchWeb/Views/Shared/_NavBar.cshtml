@@ -19,6 +19,6 @@
 </div>
 
 <i class="icon-close fa fa-times" aria-hidden="true"></i>
-<form asp-controller="Home" asp-action="SearchResults" class="form">
-	<input class="input-search" type="text" name="id" placeholder="Search...">
+<form action="@Url.Action("searchresults","home")" method="get" class="form">
+    <input class="input-search" type="text" name="id" placeholder="Search...">
 </form>

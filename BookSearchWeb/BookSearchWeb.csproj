@@ -229,6 +229,7 @@
     <Content Include="Content\css\bootstrap-cosmo.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\dev\index.css" />
     <Content Include="Content\css\dev\style.css" />
     <Content Include="Content\css\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\css\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -238,6 +239,8 @@
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\style.min.css" />
+    <Content Include="Content\Image\11532f1f55daad6e95df4fd9547e728d.jpeg" />
+    <Content Include="Content\Image\hinh-nen-quyen-sach-12.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -396,7 +399,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57869</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44398/</IISUrl>
+          <IISUrl>http://localhost:44398/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
