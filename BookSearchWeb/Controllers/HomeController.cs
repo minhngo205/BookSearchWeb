@@ -22,21 +22,17 @@ namespace BookSearchWeb.Controllers
         }
         public async Task<ActionResult> SearchResults(string id, int page = 1, int pageSize = 10)
         {
-            if (!String.IsNullOrEmpty(id))
+            if (!String.IsNullOrEmpty(id)&&!String.IsNullOrEmpty(id.Trim()))
             {
-                if (!String.IsNullOrEmpty(id.Trim()))
-                {
-                    _userSearch.Search(id);
-                }
+                _userSearch.Search(id);
+            }
+            else
+            {
+                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Please input in correct formation')</SCRIPT>");
+                return View();
             }
             var books = from b in _db.BookNameTable select b;
-            if (!String.IsNullOrEmpty(id))
-            {
-                if (!String.IsNullOrEmpty(id.Trim()))
-                {
-                    books = books.Where(s => s.SearchedFor.Equals(id));
-                }
-            }
+            books = books.Where(s => s.SearchedFor.Equals(id));
             IEnumerable<BookUserSearch> bookList = await books.OrderByDescending(s => s.DataAndTime).ToListAsync();
             PagedList<BookUserSearch> model = new PagedList<BookUserSearch>(bookList, page, pageSize);
             return View(model);

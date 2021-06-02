@@ -20,5 +20,5 @@
 
 <i class="icon-close fa fa-times" aria-hidden="true"></i>
 <form action="@Url.Action("searchresults","home")" method="get" class="form">
-    <input class="input-search" type="text" name="id" placeholder="Search...">
+    <input class="input-search" type="text" pattern="[A-Za-z]{0,}" title="Search data cannot start with space" name="id" placeholder="Search..." autocomplete="off" required>
 </form>

@@ -240,6 +240,8 @@
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\Image\11532f1f55daad6e95df4fd9547e728d.jpeg" />
+    <Content Include="Content\Image\connecters.png" />
+    <Content Include="Content\Image\connector-modded.png" />
     <Content Include="Content\Image\hinh-nen-quyen-sach-12.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
